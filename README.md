@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 星盤與人類圖 · Vibe Coding 個人網站
 
-## Getting Started
+一個以現代簡約設計呈現星座與人類圖解析的個人網站。透過直觀的介面探索行星宮位、星座特質與人類圖的智慧。
 
-First, run the development server:
+## 關於這個專案
+
+這是一個 **Vibe Coding** 實驗項目——透過直覺式的開發流程，將靈性知識轉化為數位體驗。網站採用極簡黑白配色與現代排版，讓占星資訊在視覺上更清晰易讀。
+
+### 功能特色
+
+- **星座解析**：展示個人星盤資料，包含行星、宮位與星座特質
+- **人類圖**：即將推出的個人化人類圖解讀功能
+- **互動式表格**：使用 details tag 摺疊展開詳細描述，保持介面簡潔
+- **響應式設計**：桌面與行動裝置皆可流暢瀏覽
+- **深色模式**：支援 light/dark 模式切換
+
+## 技術棧
+
+- **框架**：[Next.js 16](https://nextjs.org) (App Router)
+- **語言**：TypeScript
+- **樣式**：Tailwind CSS v4
+- **字型**：Geist Sans & Geist Mono
+
+## 開發指令
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+# 安裝依賴
+bun install
+
+# 啟動開發伺服器
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+開啟 [http://localhost:3000](http://localhost:3000) 即可預覽。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 資料結構
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+星座資料儲存於 `assets/astrolabe.ts`，包含：
 
-## Learn More
+- `planet`：行星名稱
+- `house`：宮位
+- `house_description`：宮位意義描述
+- `sign`：星座
+- `sign_description`：星座特質描述
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built with curiosity and code.*
