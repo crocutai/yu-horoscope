@@ -183,7 +183,7 @@ export default function HoroscopePage() {
                           <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
                             中心分析
                           </h4>
-                          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">
+                          <p className="text-zinc-700 dark:text-zinc-300 leading-loose whitespace-pre-line">
                             {item.center_description}
                           </p>
                         </div>
@@ -195,7 +195,7 @@ export default function HoroscopePage() {
                           <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
                             閘門解析
                           </h4>
-                          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">
+                          <p className="text-zinc-700 dark:text-zinc-300 leading-loose whitespace-pre-line">
                             {item.gate_description}
                           </p>
                         </div>
@@ -207,7 +207,7 @@ export default function HoroscopePage() {
                           <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
                             財賦密碼
                           </h4>
-                          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">
+                          <p className="text-zinc-700 dark:text-zinc-300 leading-loose whitespace-pre-line">
                             {item.money_description}
                           </p>
                         </div>
