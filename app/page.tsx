@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { astrolabes } from "@/assets/astrolabe";
+import { Astrolabes } from "@/assets/astrolabe";
+import { Human_Design } from "@/assets/human_design";
 
 export default function HoroscopePage() {
   const [activeTab, setActiveTab] = useState<"星座" | "人類圖">("星座");
@@ -56,7 +57,7 @@ export default function HoroscopePage() {
 
             {/* Table Rows */}
             <div className="space-y-3">
-              {astrolabes.map((item, index) => (
+              {Astrolabes.map((item, index) => (
                 <details
                   key={index}
                   className="group bg-zinc-50 dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-700"
@@ -144,26 +145,78 @@ export default function HoroscopePage() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="w-16 h-16 mb-6 rounded-2xl bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">
-              <svg
-                className="w-8 h-8 text-zinc-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
+          <div className="space-y-4">
+            {/* Human Design Sections */}
+            <div className="space-y-3">
+              {Human_Design.map((item, index) => (
+                <details
+                  key={index}
+                  className="group bg-zinc-50 dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-700"
+                >
+                  <summary className="flex items-center justify-between p-4 md:px-6 md:py-5 cursor-pointer list-none">
+                    <div className="flex items-center gap-6 w-full">
+                      <span className="text-base md:text-lg font-semibold w-40 md:w-48 flex-shrink-0 whitespace-nowrap">
+                        {item.name}
+                      </span>
+                    </div>
+                    <svg
+                      className="w-5 h-5 text-zinc-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </summary>
+
+                  {/* Expanded Content */}
+                  <div className="px-4 md:px-6 pb-5 md:pb-6 pt-0">
+                    <div className="border-t border-zinc-200 dark:border-zinc-800 pt-4 md:pt-5 space-y-6">
+                      {/* Center Description */}
+                      {item.center_description && (
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                            中心分析
+                          </h4>
+                          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">
+                            {item.center_description}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Gate Description */}
+                      {item.gate_description && (
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                            閘門解析
+                          </h4>
+                          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">
+                            {item.gate_description}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Money Description */}
+                      {item.money_description && (
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                            財賦密碼
+                          </h4>
+                          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line">
+                            {item.money_description}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </details>
+              ))}
             </div>
-            <h3 className="text-lg font-medium mb-2">人類圖功能即將推出</h3>
-            <p className="text-zinc-500 dark:text-zinc-400 max-w-sm">
-              我們正在開發人類圖解析功能，敬請期待。
-            </p>
           </div>
         )}
       </div>

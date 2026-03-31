@@ -1,4 +1,4 @@
-export const astrolabes = [
+export const Astrolabes = [
     {
         "planet": "上升星座",
         "house": "",
