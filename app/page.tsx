@@ -45,8 +45,7 @@ export default function HoroscopePage() {
         </div>
 
         {/* Content */}
-        {activeTab === "星座" ? (
-          <div className="space-y-4">
+        <div className={activeTab === "星座" ? "space-y-4" : "space-y-4 hidden"}>
             {/* Table Header - Desktop */}
             <div className="hidden md:grid grid-cols-12 gap-4 px-4 py-3 text-sm font-medium text-zinc-400 uppercase tracking-wider">
               <div className="col-span-2">行星</div>
@@ -143,8 +142,10 @@ export default function HoroscopePage() {
                 </details>
               ))}
             </div>
-          </div>
-        ) : (
+        </div>
+
+        {/* Human Design Tab Content */}
+        <div className={activeTab === "人類圖" ? "space-y-4" : "space-y-4 hidden"}>
           <div className="space-y-4">
             {/* Human Design Sections */}
             <div className="space-y-3">
@@ -218,7 +219,7 @@ export default function HoroscopePage() {
               ))}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
